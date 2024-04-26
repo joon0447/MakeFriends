@@ -1,0 +1,4 @@
+name: MakeFriends
+version: '${project.version}'
+main: org.joon.makefriends.MakeFriends
+api-version: '1.20'
