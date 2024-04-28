@@ -1,4 +1,6 @@
+org\joon\makefriends\Data\DataManager.class
+org\joon\makefriends\Listeners\FriendsMenuListener.class
 org\joon\makefriends\Menus\FriendsMenu.class
 org\joon\makefriends\MakeFriends.class
 org\joon\makefriends\Commands\FriendsCommand.class
-org\joon\makefriends\Listeners\FriendsMainMenuListener.class
+org\joon\makefriends\Utils\PageUtil.class
