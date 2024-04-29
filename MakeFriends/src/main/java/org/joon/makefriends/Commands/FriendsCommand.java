@@ -45,34 +45,8 @@ public class FriendsCommand implements CommandExecutor {
                     if(target == null){
                         player.sendMessage("해당 유저가 존재하지 않습니다!");
                         return false;
-                    }else{
-                        TextComponent inviteMessage =
-                                new net.md_5.bungee.api.chat.TextComponent("하이");
-                        TextComponent agree = new TextComponent(ChatColor.GREEN + "[수락]");
-                        TextComponent degree = new TextComponent(ChatColor.RED + "[거절]");
-                        agree.setClickEvent(new ClickEvent(ClickEvent.Action.RUN_COMMAND, "/친구 수락 " + player.getName()));
-                        degree.setClickEvent(new ClickEvent(ClickEvent.Action.RUN_COMMAND, "/친구 거절 " + player.getName()));
-                        inviteMessage.addExtra(agree);
-                        inviteMessage.addExtra(degree);
-                        target.spigot().sendMessage(inviteMessage);
-                    }
-                }else if(args[0].equals("수락")){
-                    Player target = Bukkit.getPlayer(args[1]);
-                    player.sendMessage("친구 수락 테스트");
-                    UUID targetUUID = target.getUniqueId();
-                    UUID playerUUID = player.getUniqueId();
-                    File targetFile = new File(MakeFriends.getInstance().getDataFolder(), "PlayerList/" + targetUUID + ".yml");
-                    File playerFile = new File(MakeFriends.getInstance().getDataFolder(), "PlayerList/" + playerUUID + ".yml");
-                    YamlConfiguration targetYML = YamlConfiguration.loadConfiguration(targetFile);
-                    YamlConfiguration playerYML = YamlConfiguration.loadConfiguration(playerFile);
-                    List<String> frindsList = new ArrayList<>();
-                    ConfigurationSection targetFriends = targetYML.getConfigurationSection("friends");
-                    ConfigurationSection playerFriends = playerYML.getConfigurationSection("friends");
-                    for(String str : targetYML.getStringList("friends")){
-                        target.sendMessage(str);
-                    }
-                    for(String str : playerYML.getStringList("friends")){
-                        player.sendMessage(str);
+                    }else {
+                        target.sendMessage("친구 요청이 왔습니다. 수신함을 확인해주세요.");
                     }
                 }
             }

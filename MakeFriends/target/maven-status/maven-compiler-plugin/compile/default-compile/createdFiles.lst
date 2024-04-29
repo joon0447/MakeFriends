@@ -1,6 +1,11 @@
+org\joon\makefriends\Listeners\FriendGiftListener.class
 org\joon\makefriends\Data\DataManager.class
+org\joon\makefriends\Listeners\FriendJoinListener.class
+org\joon\makefriends\Data\FriendsManager.class
 org\joon\makefriends\Listeners\FriendsMenuListener.class
 org\joon\makefriends\Menus\FriendsMenu.class
+org\joon\makefriends\Data\MailManager.class
 org\joon\makefriends\MakeFriends.class
 org\joon\makefriends\Commands\FriendsCommand.class
+org\joon\makefriends\Utils\GetUUID.class
 org\joon\makefriends\Utils\PageUtil.class

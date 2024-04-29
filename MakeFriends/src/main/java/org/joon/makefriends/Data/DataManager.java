@@ -1,6 +1,7 @@
 package org.joon.makefriends.Data;
 
 import org.bukkit.configuration.file.YamlConfiguration;
+import org.bukkit.inventory.ItemStack;
 import org.joon.makefriends.MakeFriends;
 
 import java.io.File;
@@ -25,8 +26,12 @@ public class DataManager {
         if(!file.exists()) {
             YamlConfiguration yml = YamlConfiguration.loadConfiguration(file);
             List<String> friendsList = new ArrayList<String>();
+            List<String> mailList = new ArrayList<String>();
+            List<ItemStack> giftList = new ArrayList<ItemStack>();
             yml.set("player", uuid.toString());
             yml.set("friends", friendsList);
+            yml.set("mail", mailList);
+            yml.set("gift", giftList);
             try{
                 yml.save(file);
             } catch (IOException e) {
@@ -37,5 +42,9 @@ public class DataManager {
 
     public File loadPlayerFile(UUID uuid){
         return new File(MakeFriends.getInstance().getDataFolder(), "PlayerList/" + uuid+ ".yml");
+    }
+
+    public File loadPlayerFile(String s){
+        return new File(MakeFriends.getInstance().getDataFolder(), "PlayerList/" + s+ ".yml");
     }
 }
