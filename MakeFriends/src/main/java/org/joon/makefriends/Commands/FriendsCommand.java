@@ -27,7 +27,6 @@ import java.util.UUID;
 
 public class FriendsCommand implements CommandExecutor {
     private final DataManager dataManager = new DataManager();
-    private MakeFriends makeFriends;
 
 
 
@@ -39,16 +38,35 @@ public class FriendsCommand implements CommandExecutor {
             if(args.length == 0){
                 new FriendsMenu().FriendsMainMenu(player); //친구 메인 메뉴
             }
-            if(args.length == 2){
-                if(args[0].equals("초대")){
-                    Player target = Bukkit.getPlayer(args[1]);
-                    if(target == null){
-                        player.sendMessage("해당 유저가 존재하지 않습니다!");
-                        return false;
-                    }else {
-                        target.sendMessage("친구 요청이 왔습니다. 수신함을 확인해주세요.");
+            else if(args.length == 1){
+                if(args[0].equals("선물종료")){
+                    if(MakeFriends.giftMap.containsKey(player)){
+                        MakeFriends.giftMap.remove(player);
+                        player.sendMessage(MakeFriends.prefix + "선물 보내기 모드가 종료되었습니다.");
+                    }else{
+                        player.sendMessage(MakeFriends.prefix + "선물 보내기 모드가 아닙니다!");
                     }
+                }else {
+                    player.sendMessage(MakeFriends.prefix + "친구 기능을 사용하려면 " +
+                            ChatColor.GREEN + "/친구 " + ChatColor.RESET + "를 입력해주세요.");
                 }
+            }
+            else if(args.length == 2) {
+                if (args[0].equals("초대")) {
+                    Player target = Bukkit.getPlayer(args[1]);
+                    if (target == null) {
+                        player.sendMessage(MakeFriends.prefix + "해당 유저가 존재하지 않습니다!");
+                        return false;
+                    } else {
+                        target.sendMessage(MakeFriends.prefix + "친구 요청이 왔습니다. 수신함을 확인해주세요.");
+                    }
+                } else {
+                    player.sendMessage(MakeFriends.prefix + "친구 기능을 사용하려면 " +
+                            ChatColor.GREEN + "/친구 " + ChatColor.RESET + "를 입력해주세요.");
+                }
+            } else {
+                player.sendMessage(MakeFriends.prefix + "친구 기능을 사용하려면 " +
+                        ChatColor.GREEN + "/친구 " + ChatColor.RESET + "를 입력해주세요.");
             }
         }
         return false;

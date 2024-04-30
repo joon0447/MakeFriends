@@ -311,7 +311,7 @@ public class FriendsMenu {
             left = new ItemStack(Material.RED_STAINED_GLASS_PANE);
             leftMeta = left.getItemMeta();
             assert leftMeta != null;
-            leftMeta.setDisplayName(ChatColor.RED + "이전 페이지");
+            leftMeta.setDisplayName(ChatColor.RED + "이전 페이지가 없습니다.");
         }
         leftMeta.setLocalizedName(page + "");
         left.setItemMeta(leftMeta);
@@ -328,7 +328,7 @@ public class FriendsMenu {
             right = new ItemStack(Material.RED_STAINED_GLASS_PANE);
             rightMeta = right.getItemMeta();
             assert rightMeta != null;
-            rightMeta.setDisplayName(ChatColor.RED + "다음 페이지");
+            rightMeta.setDisplayName(ChatColor.RED + "다음 페이지가 없습니다.");
         }
         right.setItemMeta(rightMeta);
         inv.setItem(50, right);
@@ -384,7 +384,7 @@ public class FriendsMenu {
 
     // 선물함 메뉴
     public void friendsCheckGiftMenu(Player player){
-        Inventory inv = Bukkit.createInventory(player, 54, ChatColor.BLUE + "선물함");
+        Inventory inv = Bukkit.createInventory(null, 54, ChatColor.BLUE + "선물함");
         UUID uuid = player.getUniqueId();
 
         File file = new DataManager().loadPlayerFile(uuid);

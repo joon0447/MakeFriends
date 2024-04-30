@@ -23,8 +23,7 @@ public class GetUUID {
             result += "-" + uuid.substring(20, 32);
             return result;
         } catch (IOException e) {
-            e.printStackTrace();
+            return null;
         }
-        return null;
     }
 }

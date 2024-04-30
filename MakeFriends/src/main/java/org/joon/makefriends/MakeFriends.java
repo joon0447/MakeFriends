@@ -1,6 +1,8 @@
 package org.joon.makefriends;
 
 import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
+import org.bukkit.OfflinePlayer;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.joon.makefriends.Commands.FriendsCommand;
@@ -9,15 +11,13 @@ import org.joon.makefriends.Listeners.FriendGiftListener;
 import org.joon.makefriends.Listeners.FriendJoinListener;
 import org.joon.makefriends.Listeners.FriendsMenuListener;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public final class MakeFriends extends JavaPlugin {
 
     private final DataManager dataManager = new DataManager();
-    public static Map<Player, Player> giftMap;
+    public static Map<UUID, UUID> giftMap;
+    public static String prefix = ChatColor.YELLOW + "[친구] " + ChatColor.RESET;
     @Override
     public void onEnable() {
         giftMap = new HashMap<>();

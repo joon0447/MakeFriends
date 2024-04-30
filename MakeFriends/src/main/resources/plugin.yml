@@ -4,3 +4,4 @@ main: org.joon.makefriends.MakeFriends
 api-version: '1.20'
 commands:
   친구:
+    description: "친구 관리 창을 엽니다."

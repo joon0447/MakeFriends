@@ -1,7 +1,9 @@
 D:\Minecraft\MakeFriends\src\main\java\org\joon\makefriends\Commands\FriendsCommand.java
+D:\Minecraft\MakeFriends\src\main\java\org\joon\makefriends\Listeners\FriendJoinListener.java
 D:\Minecraft\MakeFriends\src\main\java\org\joon\makefriends\MakeFriends.java
 D:\Minecraft\MakeFriends\src\main\java\org\joon\makefriends\Data\MailManager.java
 D:\Minecraft\MakeFriends\src\main\java\org\joon\makefriends\Data\DataManager.java
+D:\Minecraft\MakeFriends\src\main\java\org\joon\makefriends\Listeners\FriendGiftListener.java
 D:\Minecraft\MakeFriends\src\main\java\org\joon\makefriends\Utils\GetUUID.java
 D:\Minecraft\MakeFriends\src\main\java\org\joon\makefriends\Listeners\FriendsMenuListener.java
 D:\Minecraft\MakeFriends\src\main\java\org\joon\makefriends\Menus\FriendsMenu.java
